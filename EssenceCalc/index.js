@@ -63,37 +63,42 @@ function calculateEssence(firstStar, lastStar, item) {
 }
 
 register('command', (...args) => {
+    args[0] = args[0].toLowerCase()
     if (args.length >= 3) {
-        if (args[1] <= 5 && args[2] <= 5) {
-            //checking if the array contains the item
-            if (FindInArray(wither, args[0]) != undefined) {
-                //calcutating the essence
-                essence = calculateEssence(Number(args[1]), Number(args[2]), wither[FindInArray(wither, args[0])])
-                itemArray = wither[FindInArray(wither, args[0])]
-                item = itemArray[0]
-                item = item.replace("_", " ")
+        if (!isNaN(args[1]) && !isNaN(args[2])) {
+            if (args[1] <= 5 && args[2] <= 5) {
+                //checking if the array contains the item
+                if (FindInArray(wither, args[0]) != undefined) {
+                    //calcutating the essence
+                    essence = calculateEssence(Number(args[1]), Number(args[2]), wither[FindInArray(wither, args[0])])
+                    itemArray = wither[FindInArray(wither, args[0])]
+                    item = itemArray[0]
+                    item = item.replace("_", " ")
 
-                Total12 = itemArray[2] + itemArray[3]
-                Total123 = Total12 + itemArray[4]
-                Total1234 = Total123 + itemArray[5]
-                Total12345 = Total1234 + itemArray[6]
+                    Total12 = itemArray[2] + itemArray[3]
+                    Total123 = Total12 + itemArray[4]
+                    Total1234 = Total123 + itemArray[5]
+                    Total12345 = Total1234 + itemArray[6]
 
-                ChatLib.chat("§e-------------------------------------------")
-                ChatLib.chat("§aItem: " + item)
-                ChatLib.chat("§6Dungeonize Cost: " + itemArray[1])
-                ChatLib.chat("§6✪: " + itemArray[2].toString())
-                ChatLib.chat("§6✪✪: " + itemArray[3].toString() + " Total: " + Total12.toString())
-                ChatLib.chat("§6✪✪✪: " + itemArray[4].toString() + " Total: " + Total123.toString())
-                ChatLib.chat("§6✪✪✪✪: " + itemArray[5].toString() + " Total: " + Total1234.toString())
-                ChatLib.chat("§6✪✪✪✪✪: " + itemArray[6].toString() + " Total: " + Total12345.toString())
-                ChatLib.chat("§1§lEssence for Star " + args[1] + " - " + args[2] + ": " + essence.toString())
-                ChatLib.chat("§e-------------------------------------------")
+                    ChatLib.chat("§e-------------------------------------------")
+                    ChatLib.chat("§aItem: " + item)
+                    ChatLib.chat("§6Dungeonize Cost: " + itemArray[1])
+                    ChatLib.chat("§6✪: " + itemArray[2].toString())
+                    ChatLib.chat("§6✪✪: " + itemArray[3].toString() + " Total: " + Total12.toString())
+                    ChatLib.chat("§6✪✪✪: " + itemArray[4].toString() + " Total: " + Total123.toString())
+                    ChatLib.chat("§6✪✪✪✪: " + itemArray[5].toString() + " Total: " + Total1234.toString())
+                    ChatLib.chat("§6✪✪✪✪✪: " + itemArray[6].toString() + " Total: " + Total12345.toString())
+                    ChatLib.chat("§1§lEssence for Star " + args[1] + " - " + args[2] + ": " + essence.toString())
+                    ChatLib.chat("§e-------------------------------------------")
 
+                } else {
+                    ChatLib.chat("§cCould not find item.")
+                }
             } else {
-                ChatLib.chat("§cCould not find item.")
+                ChatLib.chat("§cYou cannot provide a star higher than 5!")
             }
         } else {
-            ChatLib.chat("§cYou cannot provide a star higher than 5!")
+            ChatLib.chat("§cOne or more of your Stars wasn't a number!")
         }
     } else {
         ChatLib.chat("§cYou are missing one or more arguments!\n§c/essencecalc {SkyblockItemID} {1st star to apply} {2nd star to apply}")
