@@ -1,0 +1,6 @@
+{
+    "name": "EssenceCalc",
+    "creator": "Asumji",
+    "description": "A simple essence calculator to calculate how much essence you need to apply a certain amount of stars.",
+    "entry": "index.js"
+  }
