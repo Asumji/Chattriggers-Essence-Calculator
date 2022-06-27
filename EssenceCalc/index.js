@@ -218,9 +218,10 @@ let essA = [
     }
     
     function buildOutput(itemA, args) {
+        //calcutating the essence
         essence = calculateEssence(Number(args[1]), Number(args[2]), essA[FindInArray(essA, args[0])])
         item = itemA[0]
-        item = item.replace("_", " ")
+        item = item.replace(/_/g, " ")
         
         //checking if the item has a dungeonize price or not
         if (itemA[1] != "Dungeon Item") {
@@ -237,6 +238,7 @@ let essA = [
             Total1234 = Total123 + itemA[5]
             Total12345 = Total1234 + itemA[6]
         }
+        
         //building the message
         ChatLib.chat("§e-------------------------------------------")
         ChatLib.chat("§aItem: " + item)
@@ -257,7 +259,7 @@ let essA = [
                 if (args[1] <= 5 && args[2] <= 5 && args[1] >= 0 && args[2] >= 0) {
                     //checking if the array contains the item
                     if (FindInArray(essA, args[0]) != undefined) {
-                        //calcutating the essence
+                        //building the message
                         itemArray = essA[FindInArray(essA, args[0])]
                         if (args[1] == 0 || args[2] == 0) {
                             if (itemArray[1] == "Dungeon Item") {
