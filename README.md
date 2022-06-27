@@ -9,6 +9,6 @@ How to Install
 
 or manual Install (after step 5):
 
-6. Download Source Code.
+6. Download Source Code. (Release prefferably)
 7. Unzip it.
 8. Drag the Source code into the modules folder. (Appdata/Roaming/.minecraft/config/ChatTriggers/EssenceCalc)
