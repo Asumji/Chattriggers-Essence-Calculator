@@ -1,4 +1,4 @@
-#How to Install
+How to Install
 
 1. Download Forge 1.8.9 (https://files.minecraftforge.net/net/minecraftforge/forge/)
 2. Launch Forge
