@@ -36,7 +36,7 @@ let essA = [
     ["necromancer_sword","Dungeon Item",70,150,250,450,750,1670,"Wither"],
     ["necron_blade","Dungeon Item",150,300,500,900,1500,3350,"Wither"],
     ["wither_helmet","Dungeon Item",50,100,200,350,500,1200,"Wither"],
-    ["wither_chesplate","Dungeon Item",100,200,350,600,1000,2500,"Wither"],
+    ["wither_chestplate","Dungeon Item",100,200,350,600,1000,2500,"Wither"],
     ["wither_leggings","Dungeon Item",75,150,250,400,700,1575,"Wither"],
     ["wither_boots","Dungeon Item",50,100,200,350,500,1200,"Wither"],
     ["runaans_bow",20,5,10,15,20,25,95,"Spider"],
