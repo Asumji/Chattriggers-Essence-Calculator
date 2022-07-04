@@ -39,6 +39,7 @@ let essA = [
     ["wither_chestplate","Dungeon Item",100,200,350,600,1000,2500,"Wither"],
     ["wither_leggings","Dungeon Item",75,150,250,400,700,1575,"Wither"],
     ["wither_boots","Dungeon Item",50,100,200,350,500,1200,"Wither"],
+    ["dark_claymore", "Dungeon Item",150,300,500,900,1500,3350,"Wither"],
     ["runaans_bow",20,5,10,15,20,25,95,"Spider"],
     ["leaping_sword",20,5,10,15,20,25,95,"Spider"],
     ["silk_edge_sword",20,5,10,15,20,25,95,"Spider"],
@@ -175,10 +176,13 @@ let essA = [
     ["superior_dragon_chestplate",100,160,100,160,240,360,1120,"Dragon"],
     ["superior_dragon_leggings",85,50,80,130,220,320,885,"Dragon"],
     ["superior_dragon_boots",60,40,60,80,180,280,700,"Dragon"],
-    ["holy_dragon_helmet",400,50,75,100,125,150,900,"Dragon"],
-    ["holy_dragon_chestplate",700,70,110,150,190,230,1450,"Dragon"],
-    ["holy_dragon_leggings",600,60,90,120,150,180,1200,"Dragon"],
-    ["holy_dragon_boots",350,50,75,100,125,150,850,"Dragon"],
+    ["holy_dragon_helmet",40,50,75,100,125,150,900,"Dragon"],
+    ["holy_dragon_chestplate",70,70,110,150,190,230,1450,"Dragon"],
+    ["holy_dragon_leggings",60,60,90,120,150,180,1200,"Dragon"],
+    ["holy_dragon_boots",35,50,75,100,125,150,850,"Dragon"],
+    ["sinseeker_sythe",250,70,140,210,350,600,2290,"Dragon"],
+    ["terminator",300,100,200,300,500,750,2150,"Dragon"],
+    ["juju_shortbow",150,30,60,120,200,300,860,"Dragon"],
     ["hardened_diamond_helmet",10,5,10,15,20,25,85,"Diamond"],
     ["hardened_diamond_chestplate",10,5,10,15,20,25,85,"Diamond"],
     ["hardened_diamond_leggings",10,5,10,15,20,25,85,"Diamond"],
@@ -195,6 +199,16 @@ let essA = [
     ["diamond_sadan_head","Dungeon Item",50,75,125,250,500,1000,"Diamond"],
     ["diamond_necron_head","Dungeon Item",50,75,125,250,500,1000,"Diamond"]
     ]
+
+    function capitalizeWord(word) {
+        string = ""
+        word = word.split("")
+        word[0] = word[0].toUpperCase()
+        for (var i = 0;i<word.length;i++) {
+            string = string + word[i]
+        }
+        return string
+    }
     
     function FindInArray(array, keyword) {
         var index = undefined
@@ -222,6 +236,7 @@ let essA = [
         essence = calculateEssence(Number(args[1]), Number(args[2]), essA[FindInArray(essA, args[0])])
         item = itemA[0]
         item = item.replace(/_/g, " ")
+        item = capitalizeWord(item)
         
         //checking if the item has a dungeonize price or not
         if (itemA[1] != "Dungeon Item") {
